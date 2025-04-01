@@ -206,55 +206,55 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-/**
- * @swagger
- * /api/users/all:
- *   get:
- *     summary: Get all users
- *     description: Retrieve a list of all registered users (excluding passwords). Admin access is typically required.
- *     tags: [Users]
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Successfully retrieved all users
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 success:
- *                   type: boolean
- *                   example: true
- *                 users:
- *                   type: array
- *                   items:
- *                     type: object
- *                     properties:
- *                       _id:
- *                         type: string
- *                         example: "60d0fe4f5311236168a109ca"
- *                       name:
- *                         type: string
- *                         example: John Doe
- *                       email:
- *                         type: string
- *                         example: johndoe@example.com
- *       401:
- *         description: Unauthorized - Token missing or invalid
- *       500:
- *         description: Internal server error
- */
+// /**
+//  * @swagger
+//  * /api/users/all:
+//  *   get:
+//  *     summary: Get all users
+//  *     description: Retrieve a list of all registered users (excluding passwords). Admin access is typically required.
+//  *     tags: [Users]
+//  *     security:
+//  *       - bearerAuth: []
+//  *     responses:
+//  *       200:
+//  *         description: Successfully retrieved all users
+//  *         content:
+//  *           application/json:
+//  *             schema:
+//  *               type: object
+//  *               properties:
+//  *                 success:
+//  *                   type: boolean
+//  *                   example: true
+//  *                 users:
+//  *                   type: array
+//  *                   items:
+//  *                     type: object
+//  *                     properties:
+//  *                       _id:
+//  *                         type: string
+//  *                         example: "60d0fe4f5311236168a109ca"
+//  *                       name:
+//  *                         type: string
+//  *                         example: John Doe
+//  *                       email:
+//  *                         type: string
+//  *                         example: johndoe@example.com
+//  *       401:
+//  *         description: Unauthorized - Token missing or invalid
+//  *       500:
+//  *         description: Internal server error
+//  */
 // Get All User
-exports.getAllUsers = async (req, res) => {
-  try {
-    const users = await User.find({}, "-password"); // Exclude password field for security
-    res.status(StatusCodes.OK).json({ success: true, users });
-  } catch (error) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      success: false,
-      message: "Internal Server Error",
-      error: error.message,
-    });
-  }
-};
+// exports.getAllUsers = async (req, res) => {
+//   try {
+//     const users = await User.find({}, "-password"); 
+//     res.status(StatusCodes.OK).json({ success: true, users });
+//   } catch (error) {
+//     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+//       success: false,
+//       message: "Internal Server Error",
+//       error: error.message,
+//     });
+//   }
+// };

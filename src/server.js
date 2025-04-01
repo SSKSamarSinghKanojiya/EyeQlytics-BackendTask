@@ -23,7 +23,8 @@ const swaggerOptions = {
     info: {
       title: "User Management API",
       version: "1.0.0",
-      description: "API for managing users with registration, login, and CRUD operations",
+      description:
+        "API for managing users with registration, login, and CRUD operations",
     },
     servers: [
       {
@@ -32,7 +33,7 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ["./src/routes/*.js", "./src/controllers/*.js"], // Adjust if needed
+  apis: ["./src/routes/*.js", "./src/controllers/*.js"],
 };
 
 // Initialize Swagger
@@ -46,12 +47,9 @@ app.get("/hello", (req, res) => {
   res.send("API is running...");
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello, Docker with Express and MongoDB!');
+app.get("/", (req, res) => {
+  res.send("Hello, Docker with Express and MongoDB!");
 });
-
-
-// const PORT = 3000
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

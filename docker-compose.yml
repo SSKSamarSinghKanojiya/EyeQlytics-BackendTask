@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: express_app
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_URI=mongodb://db:27017/EyeQlytics
+    volumes:
+      - .:/app
+      - /app/node_modules  # Avoid mounting local node_modules to prevent conflicts
+    command: npm start  # Assuming you have "dev" script to start the app with nodemon
+    depends_on:
+      - db
+
+  db:
+    container_name: mongo_db
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+
+
+
+
+
+
+
+
+
+
+
+
+# version: '3.8'
+
+# services:
+#   app:
+#     container_name: express_app
+#     build: .
+#     ports:
+#       - "8080:8080"
+#     environment:
+#       - MONGO_URI=mongodb://db:27017/EyeQlytics
+#     volumes:
+#       - .:/app
+#       # - /app/node_modules
+#     command: npm start
+#     depends_on:
+#       - db
+
+#   db:
+#     container_name: mongo_db
+#     image: mongo:6.0
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo_data:/data/db
+
+# volumes:
+#   mongo_data:
